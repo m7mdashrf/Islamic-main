@@ -85,7 +85,7 @@ let surahsContainer = document.querySelector('.surahsContainer');
 
 function getSurahs() {
     // Fetch Surahs Data {Name Of Surahs}
-    fetch('https://api.quran.com/api/v4/chapters?language=ar')
+    fetch(' https://api.alquran.cloud/v1/meta')
         .then(response => response.json())
         .then(data => {
             let surahs = data.data.surahs.references;
