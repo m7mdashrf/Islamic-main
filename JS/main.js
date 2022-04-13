@@ -85,7 +85,7 @@ let surahsContainer = document.querySelector('.surahsContainer');
 
 function getSurahs() {
     // Fetch Surahs Data {Name Of Surahs}
-    fetch(' http://api.alquran.cloud/v1/meta')
+    fetch('https://api.quran.com/api/v4/chapters?language=ar')
         .then(response => response.json())
         .then(data => {
             let surahs = data.data.surahs.references;
@@ -104,7 +104,7 @@ function getSurahs() {
             let ayatContainer = document.querySelector('.ayat');
             surahTitle.forEach((title, index) => {
                 title.addEventListener('click', () => {
-                    fetch(`http://api.alquran.cloud/v1/surah/${index + 1}`)
+                    fetch(`https://api.alquran.cloud/v1/surah/${index + 1}`)
                         .then(response => response.json())
                         .then(data => {
                             ayatContainer.innerHTML = "";
@@ -135,7 +135,7 @@ let cards = document.querySelector('.cards');
 
 
 function prayTimes() {
-    fetch(' http://api.aladhan.com/v1/timingsByCity?city=Cairo&country=Egypt&method=8')
+    fetch(' https://api.aladhan.com/v1/timingsByCity?city=Cairo&country=Egypt&method=8')
         .then(response => response.json())
         .then(data => {
             let times = data.data.timings;
